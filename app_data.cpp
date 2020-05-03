@@ -2,6 +2,9 @@
 
 app_data::app_data()
 {
+    this->Copy_Paste= QApplication::clipboard();   //获取系统剪贴板指针
+    //QString originalText = clipboard->text();	     //获取剪贴板上文本信息
+    //clipboard->setText("哈哈");
 
 }
 

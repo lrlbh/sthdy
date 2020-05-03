@@ -17,16 +17,46 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     app_data.cpp \
+    laozi.cpp \
     main.cpp \
     mainwindow.cpp \
-    stack_widget_one.cpp
+    zhouyi.cpp
 
 HEADERS += \
     app_data.h \
+    laozi.h \
     mainwindow.h \
-    stack_widget_one.h
+    zhouyi.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    AndroidManifest.xml \
+    android/AndroidManifest.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew \
+    android/gradlew.bat \
+    android/res/values/libs.xml \
+    xml/AndroidManifest.xml
+
+RESOURCES += \
+    res.qrc
+
+#隐藏状态栏
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/xml
+
+#android{
+#langs.files += img/*.jpg
+#langs.path = /assets/Language
+#INSTALLS += langs
+#}
+
+#contains(ANDROID_TARGET_ARCH,arm64-v8a) {
+#    ANDROID_PACKAGE_SOURCE_DIR = \
+#        $$PWD/android
+#}
