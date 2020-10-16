@@ -459,7 +459,7 @@ int  zhouyi_tab_widget::get_one_yao()
 
 void zhouyi_tab_widget::mousePressEvent(QMouseEvent *ev)
 {
-
+    qDebug()<<this->x;
     this->x= ev->globalX();
     this->y = ev->globalY();
 
